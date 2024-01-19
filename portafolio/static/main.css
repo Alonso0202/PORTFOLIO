@@ -1,0 +1,12 @@
+body{
+    background:   #090909;
+}
+
+.gb-black{
+    background:#000;
+}
+/*con esto damos un borde blanco cada que pasamos el curso por el proyecto*/
+.card-project:hover{
+    border:1px solid white;
+    cursor:pointer;
+}

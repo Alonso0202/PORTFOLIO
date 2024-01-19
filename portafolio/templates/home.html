@@ -1,0 +1,92 @@
+{% extends 'layout.html'%}
+
+{%block content%}
+
+{% load static %}
+<!-- Falto una parte al final dos 2 el 16/01/24-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>home</title>
+    
+</head>
+<body>
+    <!--la clase row es para poner el texto a la de la imagen-->
+    <header class="row">
+        <div class="col-md-4" style="margin-top: 20px;">
+            <img src="{% static 'portfolio/Alonso.jpg' %}" alt="" width="400" height="400">
+        </div>
+        <div class="col-md-8 my-auto" style="margin-top: 20px;">
+            <!-- Añade un margen superior de 20 píxeles (puedes ajustar este valor según tu preferencia) -->
+            <h1>Mi nombre es <strong> Alonso Figueroa</strong></h1>
+            <h3>Soy un principiante FullStack Developer Python</h3>
+            
+            <p style="text-align: justify;">Como principiante en el desarrollo FullStack, este proyecto me ha brindado una oportunidad 
+                invaluable para explorar  y aplicar mis habilidades en el desarrollo web. A lo largo del
+                proceso, he aprendido y experimentado con una variedad de tecnologías y herramientas 
+                esenciales para construir aplicaciones web completas y funcionales. 
+                <br><br>
+                En la parte del frontend, he trabajado con HTML, CSS y JavaScript para crear una interfaz 
+                de usuario atractiva y responsive. Además, he utilizado frameworks populares como Bootstrap
+                para facilitar el diseño y mejorar la experiencia del usuario. La manipulación del DOM y 
+                la interactividad del lado del cliente han sido áreas clave de enfoque.
+                <br><br>
+                En el backend, he empleado un framework como Django, aprovechando su potente capacidad 
+                para gestionar la lógica de la aplicación y la interacción con la base de datos. 
+                He diseñado modelos de datos, implementado vistas y manejado las rutas de URL para 
+                construir una arquitectura robusta.
+                <br><br>
+                El uso de bases de datos, en particular, ha sido esencial para almacenar y recuperar 
+                datos de manera eficiente. Además, he explorado conceptos como migraciones y consultas 
+                para gestionar la evolución de la base de datos.
+                <br><br>
+                El control de versiones con Git ha sido fundamental para el desarrollo colaborativo y el 
+                seguimiento de los cambios en el código. Asimismo, he desplegado la aplicación en entornos
+                de desarrollo y producción, utilizando servicios como Heroku para ponerla en línea.
+                <br><br>
+                Este proyecto me ha desafiado a superar obstáculos, buscar soluciones y mejorar constantemente
+                mis habilidades. A medida que avanzo como FullStack Developer, este proyecto representa 
+                un hito significativo en mi viaje de aprendizaje y siento una base sólida para continuar 
+                explorando nuevas tecnologías y abordando proyectos más complejos en el futuro.</p>
+        </div>
+</header>
+<div class=" row my-4 text-center">
+<!--desta manera podemos mostras nuestro contenido de nuestros preyectos-->
+<h3>My Projects</h3>
+<p style="text-align: justify;">Mis proyectos representan valiosas oportunidades de aprendizaje, 
+    donde he adquirido conocimientos significativos y estoy ansioso por seguir mejorando cada día. 
+    Cada proyecto ha sido una experiencia enriquecedora, permitiéndome expandir mis habilidades y
+    enfrentar nuevos desafíos. Estoy motivado y comprometido a continuar mi desarrollo día a día,
+    aprovechando cada proyecto como una plataforma para crecer y perfeccionar mis habilidades en 
+    el fascinante mundo del desarrollo.</p>
+
+{%for project in projects%}
+<div class="col-md-4 p-4" >
+    <div class="card bg-black card-project">
+        <img src="{{ project.image.url }}" alt="{{ project.title }}" class="card-img-top"/>
+        
+        <div class="card-body">
+            <h2 class="text-white">{{project.title}}</h2>
+            <p class="text-white">{{project.description}}</p>
+            <img src="{{projrct.image.url}}" alt=""/>
+        </div>
+        
+        <!-- img-fluid con esto acomodamos nuestros proyectos-->
+            
+        {% if project.url %}
+        <a href="{{project.url}}" class="btn btn-light rounder-0 btn-sm"> {{project.url}} </a>
+        {%endif%}
+
+        </div>
+    </div>
+</div>
+
+{%endfor%}
+
+{%endblock%}
+
+</div>
+</body>
+</html>

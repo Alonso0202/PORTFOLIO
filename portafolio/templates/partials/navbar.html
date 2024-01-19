@@ -1,0 +1,21 @@
+<!--con esta linea importamos la carpeta static para poder ver lo que tengo la carpeta-->
+<!--target="_blank este comando es para abrir un enlase de un archivo en otra pestaña-->
+{% load static%}
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+    <a class="navbar-brand fw-bold fst-ital " href="/">Jose Alonso Figueroa Martìnez</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ms-auto">
+                <li>
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="btn btn-primary btn-sm" href="{% static 'portfolio/Entrvista_2.pdf'%}"target="_blank">Download CB</a>
+                </li>
+            </ul>   
+        </div>
+    </div>
+</nav>
